@@ -1,2 +1,2 @@
 worker python Alcapone.py
-worker python Dayi.py
+python Dayi.py
