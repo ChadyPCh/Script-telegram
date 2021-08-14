@@ -86,7 +86,7 @@ async def new_quest_handle(event):
         await client.send_message('chtwrsbot','/g_def')
 
     if "You met some hostile creatures" in event.raw_text:
-        await client.send_message('Hexenwof',event.message) 
+        await client.send_message('cegchacon',event.message) 
 
     if ("❤️Hp: " in event.raw_text) and ("Battle of the seven castles in" in event.raw_text):
             print('working')
