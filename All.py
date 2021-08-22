@@ -17,7 +17,7 @@ def Duwars():
   os.system("python3 Duwars.py")
 
 def Resurrection():
-  os.system("python3 altChacon2.py")
+  os.system("python3 AltChacon2.py")
 
 t1= threading.Thread(target=Dayi)
 t2= threading.Thread(target=Alcapone)
