@@ -41,7 +41,7 @@ async def new_CW_handle(event):
 
             if Foray:
                 time.sleep(1)
-                await event.click(1,1)
+                await event.click(1,0)
 
         if "You received:" in event.raw_text and "stands victorious over" not in event.raw_text:
             time.sleep(randint(5,10))
