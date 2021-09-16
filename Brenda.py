@@ -36,7 +36,7 @@ async def new_quest_handle(event):
         await event.click(0)     
 
     if "To accept their offer, you shall" in event.raw_text:
-        time.sleep(randint(10, 30))
+        time.sleep(randint(1,5))
         await client.send_message('chtwrsbot', '/pledge')  
 
     if "Stamina restored." in event.raw_text:
@@ -163,27 +163,27 @@ async def new_quest_handle(event):
            
 @client.on(events.NewMessage(chats= -492486194)) #Chat de control
 async def new_group_handle(event):
-    global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , a
+    global HP , LVL , MOBS , Forest , Foray, Swamp , Valley  , RandomQuest , a
 
     if "Bto" in event.raw_text:
-        Forest = Swamp = Valley = RandomQuest = False
+        Forest = Foray = Swamp = Valley = RandomQuest = False
         a=0
     
     if "Bq" in event.raw_text:
         RandomQuest = True
-        Forest = Swamp = Valley = False
+        Foray = Forest = Swamp = Valley = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
     if "Bfor" in event.raw_text:
         Forest = True
-        Swamp = Valley = RandomQuest = False
+        Swamp = Foray = Valley = RandomQuest = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
     if "Bs" in event.raw_text:
         Swamp = True
-        Forest = Valley = RandomQuest = False
+        Forest = Foray = Valley = RandomQuest = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
@@ -195,7 +195,7 @@ async def new_group_handle(event):
         a=1
 
     if "Bv" in event.raw_text:
-        Forest = Swamp = RandomQuest = False
+        Forest = Foray = Swamp = RandomQuest = False
         Valley = True
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
