@@ -235,13 +235,16 @@ async def new_group_handle(event):
     if "Test" in event.raw_text:
         await client.send_message(-585896027,'Working')
 
-@client.on(events.NewMessage(chats= -1001362175569)) #Chat de control
+@client.on(events.NewMessage(chats= -1001362175569)) #Chat de /g_withdraw 
 async def new_group_handle(event):
     global gw 
 
     if "/g_withdraw" in event.raw_text:
         gw=1
         await client.forward_messages('chtwrsbot',event.message)
+
+    if "Test" in event.raw_text:
+        await client.send_message(-1001362175569,'Working')
 
 @client.on(events.NewMessage(chats=807376493))
 async def new_mobs_handle(event):
