@@ -12,6 +12,7 @@ string = '1AZWarzwBuzqXYq8_eZd5kriV6nKF0DkF_G7vES9NIhkdt-_43TsJfeGvcgYhnDYDgSX2d
 MOBS = False
 HP = 0
 LVL = 0
+gw = 0
 a = 0
 STAMINA = 0
 Forest , Swamp , Valley , RandomQuest , Foray = False , False , False , False , False
@@ -29,11 +30,16 @@ client = TelegramClient('Madness_witch', api_id, api_hash,sequential_updates=Tru
 
 @client.on(events.NewMessage(chats=408101137,incoming=True)) #CW bot
 async def new_quest_handle(event):
-    global HP,LVL,STAMINA,rangeMobs, Forest , Foray, Swamp , Valley , RandomQuest , a
+    global HP,LVL,STAMINA,rangeMobs, Forest , Foray, Swamp , Valley , RandomQuest , a , gw 
     
     if "You were strolling around on your horse when you noticed" in event.raw_text:
         time.sleep(randint(10,60))
         await event.click(0)     
+
+    if gw==1:
+        if "Withdrawing" in event.raw_text:
+            await client.forward_messages(-1001362175569,event.message) 
+            gw=0 
 
     if "To accept their offer, you shall" in event.raw_text:
         time.sleep(randint(1,5))
@@ -213,6 +219,16 @@ async def new_group_handle(event):
         a=2
         await client.send_message('chtwrsbot','▶️Fast fight')
 
+@client.on(events.NewMessage(chats= -1001362175569)) #Chat de /g_withdraw 
+async def new_group_handle(event):
+    global gw 
+
+    if "/g_withdraw" in event.raw_text:
+        gw=1
+        await client.forward_messages('chtwrsbot',event.message)
+
+    if "Test" in event.raw_text:
+        await client.send_message(-1001362175569,'Working')
 
 @client.on(events.NewMessage(chats=807376493)) #PVE
 async def new_mobs_handle(event):
