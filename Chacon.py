@@ -216,7 +216,7 @@ async def new_group_handle(event):
     if "Hp" in event.raw_text:
         await client.send_message('chtwrsbot','🏅Me')
 
-    if "DOn" in event.raw_text:
+    if "COn" in event.raw_text:
         MOBS = True
 
     if "COf" in event.raw_text:
@@ -228,6 +228,14 @@ async def new_group_handle(event):
 
     if "Test" in event.raw_text:
         await client.send_message(-585896027,'Working')
+
+@client.on(events.NewMessage(chats= -1001362175569)) #Chat de control
+async def new_group_handle(event):
+    global gw 
+
+    if "/g_withdraw" in event.raw_text:
+        gw=1
+        await client.forward_messages('chtwrsbot',event.message)
 
 @client.on(events.NewMessage(chats=807376493))
 async def new_mobs_handle(event):
