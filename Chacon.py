@@ -16,6 +16,7 @@ HP = 0
 LVL = 0
 STAMINA = 0
 a=0
+gw=0
 rangeMobs = {0,0,0,0,0,0,0,0,0,0}
 
 def rang(text):
@@ -30,11 +31,16 @@ client = TelegramClient('cegchacon', api_id, api_hash,sequential_updates=True)
 
 @client.on(events.NewMessage(chats=408101137,incoming=True)) #CW bot
 async def new_quest_handle(event):
-    global HP,LVL,STAMINA,rangeMobs, Forest , Swamp , Valley , RandomQuest , a
+    global HP,LVL,STAMINA,rangeMobs, Forest , Swamp , Valley , RandomQuest , a , gw 
     
     if "You were strolling around on your horse when you noticed" in event.raw_text:
         time.sleep(randint(10,60))
         await event.click(0) 
+
+    if gw==1:
+        if "/g_withdraw" in event.raw_text:
+            await client.forward_messages(-1001362175569,event.message) 
+            gw=0 
 
     if "To accept their offer, you shall" in event.raw_text:
         time.sleep(randint(10, 30))
