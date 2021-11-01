@@ -38,7 +38,7 @@ async def new_quest_handle(event):
         await event.click(0) 
 
     if gw==1:
-        if "/g_withdraw" in event.raw_text:
+        if "Withdrawing" in event.raw_text:
             await client.forward_messages(-1001362175569,event.message) 
             gw=0 
 
