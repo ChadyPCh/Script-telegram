@@ -189,20 +189,6 @@ async def new_quest_handle(event):
                 HP = int(event.raw_text[event.raw_text.find("Hp:")+4:event.raw_text.find("Hp:")+8])
 
             rangeMobs = {LVL-2,LVL-1,LVL,LVL+1,LVL+2,LVL+3,LVL+4,LVL+5,LVL+6,LVL+7}
-           
-@client.on(events.NewMessage(chats= -492486194)) #Chat de control
-async def new_group_handle(event):
-    global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , a
-
-    if "You met some hostile creatures" in event.raw_text and MOBS:
-        await client.forward_messages('chtwrsbot',event.message)
-
-    if "LGA" in event.raw_text:
-        orden = str(event.raw_text[4:len(event.raw_text)])
-        a=0
-        MOBS = False
-        await client.send_message('chtwrsbot', orden)
-
 
     if "Lto" in event.raw_text:
         Forest = Swamp = Valley = RandomQuest = False
@@ -231,9 +217,6 @@ async def new_group_handle(event):
         Valley = True
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
-
-    if "Hp" in event.raw_text:
-        await client.send_message('chtwrsbot','🏅Me')
 
     if "LOn" in event.raw_text:
         MOBS = True
