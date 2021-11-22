@@ -31,10 +31,10 @@ def Kawa():
 def Chacon():
   os.system("python3 Chacon.py")
 
-def Alcapone():
+def Luis():
   os.system("python3 Luis.py")
 
-def Yenna():
+def Salamy():
   os.system("python3 Salamy.py")
 
 t1= threading.Thread(target=Dayi)
