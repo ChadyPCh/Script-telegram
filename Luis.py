@@ -190,7 +190,7 @@ async def new_quest_handle(event):
 
             rangeMobs = {LVL-2,LVL-1,LVL,LVL+1,LVL+2,LVL+3,LVL+4,LVL+5,LVL+6,LVL+7}
            
-@client.on(events.NewMessage(chats= -492486194)) #Chat de control
+@client.on(events.NewMessage(chats= -637642007)) #Chat de control
 async def new_group_handle(event):
     global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , a
 
@@ -246,7 +246,7 @@ async def new_group_handle(event):
         await client.send_message('chtwrsbot','▶️Fast fight')
 
     if "Test" in event.raw_text:
-        await client.send_message(-492486194,'Working')
+        await client.send_message(-637642007,'Working')
 
 @client.on(events.NewMessage(chats=807376493)) #PVE
 async def new_mobs_handle(event):
