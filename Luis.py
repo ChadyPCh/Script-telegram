@@ -195,24 +195,28 @@ async def new_quest_handle(event):
         a=0
     
     if "Lq" in event.raw_text:
+        time.sleep(2)
         RandomQuest = True
         Forest = Swamp = Valley = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
     if "Lfor" in event.raw_text:
+        time.sleep(2)
         Forest = True
         Swamp = Valley = RandomQuest = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
     if "Ls" in event.raw_text:
+        time.sleep(2)
         Swamp = True
         Forest = Valley = RandomQuest = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
     if "Lv" in event.raw_text:
+        time.sleep(2)
         Forest = Swamp = RandomQuest = False
         Valley = True
         await client.send_message('chtwrsbot','🗺Quests')
@@ -225,11 +229,13 @@ async def new_quest_handle(event):
         MOBS = False
 
     if "Lff" in event.raw_text:
+        time.sleep(2)
         a=2
         await client.send_message('chtwrsbot','▶️Fast fight')
 
     if "Test" in event.raw_text:
-        await client.send_message(-492486194,'Working')
+        time.sleep(2)
+        await client.send_message('chtwrsbot','Working')
 
 @client.on(events.NewMessage(chats=807376493)) #PVE
 async def new_mobs_handle(event):
