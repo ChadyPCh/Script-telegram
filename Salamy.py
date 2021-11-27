@@ -197,36 +197,36 @@ async def new_group_handle(event):
     if "You met some hostile creatures" in event.raw_text and MOBS:
         await client.forward_messages('chtwrsbot',event.message)
 
-    if "SGA" in event.raw_text:
+    if "MGA" in event.raw_text:
         orden = str(event.raw_text[4:len(event.raw_text)])
         a=0
         MOBS = False
         await client.send_message('chtwrsbot', orden)
 
 
-    if "Sto" in event.raw_text:
+    if "Mto" in event.raw_text:
         Forest = Swamp = Valley = RandomQuest = False
         a=0
     
-    if "Sq" in event.raw_text:
+    if "Mq" in event.raw_text:
         RandomQuest = True
         Forest = Swamp = Valley = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
-    if "Sfor" in event.raw_text:
+    if "Mfor" in event.raw_text:
         Forest = True
         Swamp = Valley = RandomQuest = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
-    if "Ss" in event.raw_text:
+    if "Ms" in event.raw_text:
         Swamp = True
         Forest = Valley = RandomQuest = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
-    if "Sv" in event.raw_text:
+    if "Mv" in event.raw_text:
         Forest = Swamp = RandomQuest = False
         Valley = True
         await client.send_message('chtwrsbot','🗺Quests')
@@ -235,13 +235,13 @@ async def new_group_handle(event):
     if "Hp" in event.raw_text:
         await client.send_message('chtwrsbot','🏅Me')
 
-    if "SOn" in event.raw_text:
+    if "MOn" in event.raw_text:
         MOBS = True
 
-    if "SOf" in event.raw_text:
+    if "MOf" in event.raw_text:
         MOBS = False
 
-    if "Sff" in event.raw_text:
+    if "Mff" in event.raw_text:
         a=2
         await client.send_message('chtwrsbot','▶️Fast fight')
 
