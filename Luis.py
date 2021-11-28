@@ -80,7 +80,7 @@ async def new_quest_handle(event):
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
 
-        #EMPTY QUEST
+        #EMPTY QUEST 
 
         if "You found yourself in a land you where you did not want to appear again. The land crawling with vermin. Eight-legged, no-legged, and everything in between. Life here has become twisted and hateful. Nature does not stand a chance while it has creatures like that at its throat. Trying to escape from that evil place you’ve only stained your armor with blood." in event.raw_text:
             time.sleep(randint(5,10))
