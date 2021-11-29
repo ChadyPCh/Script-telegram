@@ -4,7 +4,7 @@ from telethon import TelegramClient, events
 from random import randint
 
 # sample API_ID from https://github.com/telegramdesktop/tdesktop/blob/f98fdeab3fb2ba6f55daf8481595f879729d1b84/Telegram/SourceFiles/config.h#L220
-# or use your own
+# or use your own 
 api_id = 1063771          # aqui va el id de tu api
 api_hash = '78353e522d117974ca8e8440744f76fa'		 # aqui el hash de tu api
 # fill in your own details here
