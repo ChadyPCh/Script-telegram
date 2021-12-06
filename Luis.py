@@ -142,6 +142,12 @@ async def new_quest_handle(event):
         if "You found yourself in a land you where you did not want to appear again. The land crawling with vermin. Eight-legged, no-legged, and everything in between. Life here has become twisted and hateful. Nature does not stand a chance while it has creatures like that at its throat. Trying to escape from that evil place you’ve only stained your armor with blood" in event.raw_text:
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
+        if "Somewhere in the forest, you encounter a deer who stops you and asks if you wish to make a trade- your lunchbox for her 31 pouches of gold. Before you could say a word, an urn smashes the poor deer." in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+        if "Statistically speaking, you come back empty handed from every third adventure in the forest. Seems like you drew your lucky ticket. You came back from the forest. And guess what? Nothing interesting happened." in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
 
  #arenas
     if a==2:
@@ -156,14 +162,10 @@ async def new_quest_handle(event):
 
     if "Not enough stamina. " in event.raw_text:
         a=0
-        time.sleep(3)
-        await client.send_message('chtwrsbot','/ga_def')
         MOBS = False
 
     if "Battle is coming" in event.raw_text:
         a=0
-        time.sleep(3)
-        await client.send_message('chtwrsbot','/ga_def')
         MOBS = False
 
     if "You met some hostile creatures" in event.raw_text:
