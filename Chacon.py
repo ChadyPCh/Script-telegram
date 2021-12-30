@@ -127,6 +127,37 @@ async def new_quest_handle(event):
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
 
+        if "In the forest you came upon a bold man who offered to fulfill your every wish. Being very cautious, you decided to reject his kind offer." in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+        if "On your quest you came to the town of Honeywood. Here you found a blacksmith having an argument with a garlic farmer. You wanted to buy something, but got annoyed by a fisherman who kept " in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+        if "Wandering around, you saw a little golden ball flying around. Quickly, you hopped on your broom and started chasing it. Just as you were about to catch the ball, you woke up, realising it was just a dream" in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+        if "As you were strolling through the forest, you noticed a group of people building a giant wall on a small meadow. Their leader, an orange man with crazy hair, looked dangerous, so you decided to head back to your castle" in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+        if "You've stepped into a pile of dung. Now you stink. Nothing else happened." in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')   
+        if "Being a naturally bad pathfinder, you got lost and just wandered around the forest for no reason." in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+        if "Suddenly you were surrounded by a huge band of orcs, led by an orc shaman. They demanded you give them everything you have. You killed every single one of them and collected a lot of loot." in event.raw_text and "When you woke up, there were no orcs and most importantly - no loot. Such a pity" in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+        if "You found yourself in a land you where you did not want to appear again. The land crawling with vermin. Eight-legged, no-legged, and everything in between. Life here has become twisted and hateful. Nature does not stand a chance while it has creatures like that at its throat. Trying to escape from that evil place you’ve only stained your armor with blood" in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+        if "Somewhere in the forest, you encounter a deer who stops you and asks if you wish to make a trade- your lunchbox for her 31 pouches of gold. Before you could say a word, an urn smashes the poor deer." in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+        if "Statistically speaking, you come back empty handed from every third adventure in the forest. Seems like you drew your lucky ticket. You came back from the forest. And guess what? Nothing interesting happened." in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+
  #arenas
     if a==2:
         if "stands victorious over" in event.raw_text or "You didn’t find an opponent. Return later" in event.raw_text:
@@ -141,13 +172,13 @@ async def new_quest_handle(event):
     if "Not enough stamina. " in event.raw_text:
         a=0
         time.sleep(3)
-        await client.send_message('chtwrsbot','/ga_def')
+        await client.send_message('chtwrsbot','🛡Defend')
         MOBS = False
 
     if "Battle is coming" in event.raw_text:
         a=0
         time.sleep(3)
-        await client.send_message('chtwrsbot','/ga_def')
+        await client.send_message('chtwrsbot','🛡Defend')
         MOBS = False
 
     if "You met some hostile creatures" in event.raw_text:
