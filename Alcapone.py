@@ -14,7 +14,11 @@ HP = 0
 LVL = 0
 a = 0
 STAMINA = 0
-Forest , Swamp , Valley , RandomQuest , Foray = False , False , False , False , False
+Forest  = False
+Swamp  = False
+Valley  = False
+RandomQuest  = False
+Foray = False
 rangeMobs = {0,0,0,0,0,0,0,0,0,0}
 
 def rang(text):
