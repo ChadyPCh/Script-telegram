@@ -41,7 +41,7 @@ async def new_quest_handle(event):
 
     if "Stamina restored." in event.raw_text:
         Foray = True
-        Forest = Swamp = Valley = False = RandomQuest
+        Forest = Swamp = Valley = RandomQuest = False 
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
