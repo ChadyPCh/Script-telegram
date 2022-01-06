@@ -110,6 +110,14 @@ async def new_quest_handle(event):
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
 
+        if "You received:" in event.raw_text and "stands victorious over" not in event.raw_text:
+            time.sleep(randint(5,10))
+            await Richar.send_message('chtwrsbot','🗺Quests')
+
+        if "was completely clueless" in event.raw_text or "tried stopping you,"  in event.raw_text or "noticed you and nearly"  in event.raw_text:
+            time.sleep(randint(5,10))
+            await Richar.send_message('chtwrsbot','🗺Quests')
+
  #arenas
     if a==2:
         if "stands victorious over" in event.raw_text or "You didn’t find an opponent. Return later" in event.raw_text:
