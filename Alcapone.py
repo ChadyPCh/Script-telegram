@@ -110,7 +110,6 @@ async def new_quest_handle(event):
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
 
-       
         if "was completely clueless" in event.raw_text or "tried stopping you,"  in event.raw_text or "noticed you and nearly"  in event.raw_text:
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
