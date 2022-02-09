@@ -212,6 +212,52 @@ async def new_RobertGA_handle(event):
         orden = str(event.raw_text[4:len(event.raw_text)])
         a=0
         await client.send_message('chtwrsbot', orden)  
+        
+@client.on(events.NewMessage(chats=-1001657461170)) #alianza ordenes
+async def new_alianza_handle(event):
+    global a
+    
+    if "#setlow" in event.raw_text and "Chacon" in event.raw_text:
+        myrange = 0
+    if "#setmid" in event.raw_text and "Chacon" in event.raw_text:
+        myrange = 1
+    if "#sethigh" in event.raw_text and "Chacon" in event.raw_text:
+        myrange = 2
+
+    if "#ranger" in event.raw_text and "Chacon" in event.raw_text:
+        myclass = 1
+    else:
+        myclass = 0
+
+    if "/low" in event.raw_text and myrange == 0 and myclass == 0:
+        orden = str(event.raw_text[5:len(event.raw_text)])
+        a=0
+        await client.send_message('chtwrsbot', orden) 
+        
+    if "/mid" in event.raw_text and myrange == 1 and myclass == 0:
+        orden = str(event.raw_text[5:len(event.raw_text)])
+        a=0
+        await client.send_message('chtwrsbot', orden) 
+        
+    if "/high" in event.raw_text and myrange == 2 and myclass == 0:
+        orden = str(event.raw_text[6:len(event.raw_text)])
+        a=0
+        await client.send_message('chtwrsbot', orden) 
+        
+    if "/rangerlow" in event.raw_text and myrange == 0 and myclass == 1:
+        orden = str(event.raw_text[11:len(event.raw_text)])
+        a=0
+        await client.send_message('chtwrsbot', orden) 
+        
+    if "/rangermid" in event.raw_text and myrange == 1 and myclass == 1:
+        orden = str(event.raw_text[11:len(event.raw_text)])
+        a=0
+        await client.send_message('chtwrsbot', orden)
+        
+    if "/rangerhigh" in event.raw_text and myrange == 2 and myclass == 1:
+        orden = str(event.raw_text[12:len(event.raw_text)])
+        a=0
+        await client.send_message('chtwrsbot', orden)
 
 @client.on(events.NewMessage(chats= -585896027)) #Chat de control
 async def new_group_handle(event):
