@@ -173,14 +173,14 @@ async def new_quest_handle(event):
 async def new_alianza_handle(event):
     global a , myclass , myrange
 
-    if "#setlow" in event.raw_text and "Chacon" in event.raw_text:
+    if "#setlow" in event.raw_text and "Brenda" in event.raw_text:
         myrange = 0
-    if "#setmid" in event.raw_text and "Chacon" in event.raw_text:
+    if "#setmid" in event.raw_text and "Brenda" in event.raw_text:
         myrange = 1
-    if "#sethigh" in event.raw_text and "Chacon" in event.raw_text:
+    if "#sethigh" in event.raw_text and "Brenda" in event.raw_text:
         myrange = 2
 
-    if "#ranger" in event.raw_text and "Chacon" in event.raw_text:
+    if "#ranger" in event.raw_text and "Brenda" in event.raw_text:
         myclass = 1
     else:
         myclass = 0
