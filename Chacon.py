@@ -218,7 +218,7 @@ async def new_RobertGA_handle(event):
         
 @client.on(events.NewMessage(chats=-1001657461170)) #alianza ordenes
 async def new_alianza_handle(event):
-    global a , myclass , my range
+    global a , myclass , myrange
 
     if "#setlow" in event.raw_text and "Chacon" in event.raw_text:
         myrange = 0
