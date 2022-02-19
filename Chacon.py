@@ -207,6 +207,7 @@ async def new_quest_handle(event):
 
 @client.on(events.NewMessage(chats=728142758)) #Robert ordenes
 async def new_RobertGA_handle(event):
+    global a
 
     if "CGA" in event.raw_text:
         orden = str(event.raw_text[4:len(event.raw_text)])
@@ -216,7 +217,9 @@ async def new_RobertGA_handle(event):
 @client.on(events.NewMessage(chats=-1001657461170)) #alianza ordenes
 async def new_alianza_handle(event):
     global a
-    
+    myrange = 4
+    myclass = 4
+
     if "#setlow" in event.raw_text and "Chacon" in event.raw_text:
         myrange = 0
     if "#setmid" in event.raw_text and "Chacon" in event.raw_text:
