@@ -18,6 +18,8 @@ STAMINA = 0
 a=0
 gw=0
 rangeMobs = {0,0,0,0,0,0,0,0,0,0}
+myclass=0
+myrange=0
 
 def rang(text):
     global rangeMobs , HP
@@ -216,9 +218,7 @@ async def new_RobertGA_handle(event):
         
 @client.on(events.NewMessage(chats=-1001657461170)) #alianza ordenes
 async def new_alianza_handle(event):
-    global a
-    myrange = 4
-    myclass = 4
+    global a , myclass , my range
 
     if "#setlow" in event.raw_text and "Chacon" in event.raw_text:
         myrange = 0
