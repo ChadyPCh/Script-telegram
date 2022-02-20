@@ -34,8 +34,8 @@ def Chacon():
 def Luis():
   os.system("python3 Luis.py")
 
-def Salamy():
-  os.system("python3 Salamy.py")
+def Chino():
+  os.system("python3 Chino.py")
 
 t1= threading.Thread(target=Dayi)
 t2= threading.Thread(target=Alcapone)
@@ -48,7 +48,7 @@ t8= threading.Thread(target=Baam)
 t9= threading.Thread(target=Kawa)
 t10= threading.Thread(target=Chacon)
 t11= threading.Thread(target=Luis)
-t12= threading.Thread(target=Salamy)
+t12= threading.Thread(target=Chino)
 
 t1.start()
 t2.start()
