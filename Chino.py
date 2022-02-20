@@ -251,7 +251,7 @@ async def new_group_handle(event):
         await client.send_message('chtwrsbot','▶️Fast fight')
 
     if "Test" in event.raw_text:
-        await client.send_message(-1001657461170,'Working')
+        await client.send_message(-492486194,'Working')
 
 @client.on(events.NewMessage(chats=807376493)) #PVE
 async def new_mobs_handle(event):
