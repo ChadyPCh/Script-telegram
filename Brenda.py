@@ -173,10 +173,6 @@ async def new_quest_handle(event):
 async def new_alianza_handle(event):
     global a
     
-    @client.on(events.NewMessage(chats=-1001657461170)) #alianza ordenes
-async def new_alianza_handle(event):
-    global a 
-    
     if "#brenda" in event.raw_text:
         orden = str(event.raw_text[8:len(event.raw_text)])
         a=0
