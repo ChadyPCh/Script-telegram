@@ -203,7 +203,7 @@ async def new_alianza_handle(event):
     global a 
     
     if "#luis" in event.raw_text:
-        orden = str(event.raw_text[7:len(event.raw_text)])
+        orden = str(event.raw_text[6:len(event.raw_text)])
         a=0
         await client.send_message('chtwrsbot', orden)
 
