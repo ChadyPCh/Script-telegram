@@ -34,7 +34,7 @@ client = TelegramClient('AlCapone_CW', api_id, api_hash,sequential_updates=True)
 
 @client.on(events.NewMessage(chats=408101137,incoming=True)) #CW bot
 async def new_quest_handle(event):
-    global HP,LVL,STAMINA,rangeMobs, Forest , Foray, Swamp , Valley , RandomQuest , a
+    global HP,LVL,STAMINA,rangeMobs, Forest , Foray, Swamp , Valley , RandomQuest , a , gw
     
     if "You were strolling around on your horse when you noticed" in event.raw_text:
         time.sleep(randint(10,60))
