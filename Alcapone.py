@@ -13,6 +13,7 @@ MOBS = False
 HP = 0
 LVL = 0
 a = 0
+gw = 0
 STAMINA = 0
 Forest  = False
 Swamp  = False
@@ -70,6 +71,14 @@ async def new_quest_handle(event):
         if "You received:" in event.raw_text and "stands victorious over" not in event.raw_text:
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
+            
+        if gw==1:
+            if "Withdrawing" in event.raw_text or "Not enough items on guild stock" in event.raw_text or "You are too busy with a different adventure. Try a bit later." in event.raw_text:
+                await client.forward_messages(-1001362175569,event.message) 
+                gw=0 
+            else:
+                gw=0
+
 
         #EMPTY QUEST
 
@@ -162,32 +171,32 @@ async def new_quest_handle(event):
            
 @client.on(events.NewMessage(chats= -585896027)) #Chat de control
 async def new_group_handle(event):
-    global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , a
+    global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , a , Foray
 
     if "Ato" in event.raw_text:
-        Forest = Swamp = Valley = RandomQuest = False
+        Forest = Swamp = Valley = RandomQuest = Foray = False
         a=0
     
     if "Aq" in event.raw_text:
         RandomQuest = True
-        Forest = Swamp = Valley = False
+        Forest = Swamp = Valley = Foray = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
     if "Afor" in event.raw_text:
         Forest = True
-        Swamp = Valley = RandomQuest = False
+        Swamp = Valley = RandomQuest = Foray = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
     if "As" in event.raw_text:
         Swamp = True
-        Forest = Valley = RandomQuest = False
+        Forest = Valley = RandomQuest = Foray = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
     if "Av" in event.raw_text:
-        Forest = Swamp = RandomQuest = False
+        Forest = Swamp = RandomQuest = Foray = False
         Valley = True
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
@@ -207,6 +216,15 @@ async def new_group_handle(event):
 
     if "Test" in event.raw_text:
         await client.send_message(-585896027,'Working')
+
+
+@client.on(events.NewMessage(chats= -1001331148581)) #Chat de /g_withdraw 
+async def new_group_handle(event):
+    global gw 
+
+    if "/g_withdraw" in event.raw_text:
+        gw=1
+        await client.forward_messages('chtwrsbot',event.message)
 
 @client.on(events.NewMessage(chats=807376493)) #PVE
 async def new_mobs_handle(event):
