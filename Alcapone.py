@@ -72,12 +72,12 @@ async def new_quest_handle(event):
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
             
-        if gw==1:
-            if "Withdrawing" in event.raw_text or "Not enough items on guild stock" in event.raw_text or "You are too busy with a different adventure. Try a bit later." in event.raw_text:
-                await client.forward_messages(-1001331148581,event.message) 
-                gw=0 
-            else:
-                gw=0
+    if gw==1:
+        if "Withdrawing" in event.raw_text or "Not enough items on guild stock" in event.raw_text or "You are too busy with a different adventure. Try a bit later." in event.raw_text:
+            await client.forward_messages(-1001331148581,event.message) 
+            gw=0 
+        else:
+            gw=0
 
 
         #EMPTY QUEST
