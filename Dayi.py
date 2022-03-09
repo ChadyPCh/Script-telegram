@@ -41,7 +41,7 @@ async def new_quest_handle(event):
         await event.click(0) 
     
     if Mirror:
-        if " " in event.raw_text:
+        if "a" in event.raw_text:
             await event.forward_messages(-1001728328287,event.message)  
 
     if "To accept their offer, you shall" in event.raw_text:
