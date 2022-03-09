@@ -19,6 +19,7 @@ a = 0
 STAMINA = 0
 myclass=4
 myrange=4
+mirror = False
 Forest , Swamp , Valley , RandomQuest , Foray = False , False , False , False , False
 rangeMobs = {0,0,0,0,0,0,0,0,0,0}
 
@@ -34,11 +35,15 @@ client = TelegramClient('Hexenwof', api_id, api_hash,sequential_updates=True)
 
 @client.on(events.NewMessage(chats=408101137,incoming=True)) #CW bot
 async def new_quest_handle(event):
-    global HP,LVL,STAMINA,rangeMobs, Forest , Swamp , Valley , RandomQuest , a
+    global HP,LVL,STAMINA,rangeMobs, Forest , Swamp , Valley , RandomQuest , a , mirror
     
     if "You were strolling around on your horse when you noticed" in event.raw_text:
         time.sleep(randint(10,60))
         await event.click(0) 
+    
+    if mirror:
+        if " " in event.raw_text:
+            await event.forward_messages(-1001728328287,event.message)  
 
     if "To accept their offer, you shall" in event.raw_text:
         time.sleep(randint(10, 30))
@@ -169,6 +174,16 @@ async def new_quest_handle(event):
                 HP = int(event.raw_text[event.raw_text.find("Hp:")+4:event.raw_text.find("Hp:")+8])
 
             rangeMobs = {LVL-2,LVL-1,LVL,LVL+1,LVL+2,LVL+3,LVL+4,LVL+5,LVL+6,LVL+7}
+
+@client.on(events.NewMessage(chats=-1001728328287)) #mirror
+async def new_mirror_handle(event):
+    global mirror
+
+    if "#mirror_on" in event.raw_text:
+        mirror = True
+
+    if "#mirror_off" in event.raw_text:
+        mirror = False
 
 @client.on(events.NewMessage(chats=-1001657461170)) #alianza ordenes
 async def new_alianza_handle(event):
