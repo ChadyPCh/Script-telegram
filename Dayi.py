@@ -19,8 +19,7 @@ a = 0
 STAMINA = 0
 myclass=4
 myrange=4
-mirror = False
-Forest , Swamp , Valley , RandomQuest , Foray = False , False , False , False , False
+Forest , Swamp , Valley , RandomQuest , Foray , Mirror = False , False , False , False , False , False
 rangeMobs = {0,0,0,0,0,0,0,0,0,0}
 
 def rang(text):
@@ -41,7 +40,7 @@ async def new_quest_handle(event):
         time.sleep(randint(10,60))
         await event.click(0) 
     
-    if mirror:
+    if Mirror:
         if " " in event.raw_text:
             await event.forward_messages(-1001728328287,event.message)  
 
@@ -177,13 +176,13 @@ async def new_quest_handle(event):
 
 @client.on(events.NewMessage(chats=-1001728328287)) #mirror
 async def new_mirror_handle(event):
-    global mirror
+    global Mirror
 
     if "#mirror_on" in event.raw_text:
-        mirror = True
+        Mirror = True
 
     if "#mirror_off" in event.raw_text:
-        mirror = False
+        Mirror = False
 
 @client.on(events.NewMessage(chats=-1001657461170)) #alianza ordenes
 async def new_alianza_handle(event):
