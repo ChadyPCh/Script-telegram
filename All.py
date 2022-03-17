@@ -42,6 +42,9 @@ def Javico():
   
 def Patronus():
   os.system("python3 Patronus.py")
+  
+def Solrak():
+  os.system("python3 Solrak.py")
 
 t1= threading.Thread(target=Dayi)
 t2= threading.Thread(target=Alcapone)
@@ -57,6 +60,7 @@ t11= threading.Thread(target=Luis)
 t12= threading.Thread(target=Chino)
 t13= threading.Thread(target=Javico)
 t14= threading.Thread(target=Patronus)
+t15= threading.Thread(target=Solrak)
 
 t1.start()
 t2.start()
@@ -72,3 +76,4 @@ t11.start()
 t12.start()
 t13.start()
 t14.start()
+t15.start()
