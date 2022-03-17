@@ -41,7 +41,7 @@ async def new_quest_handle(event):
         await event.click(0) 
     
     if Mirror:
-        if "a" in event.raw_text:
+        if "a" in event.raw_text or "i" in event.raw_text:
             await client.forward_messages(-1001728328287,event.message)  
 
     if "To accept their offer, you shall" in event.raw_text:
@@ -183,6 +183,10 @@ async def new_mirror_handle(event):
 
     if "#mirror_off" in event.raw_text:
         Mirror = False
+
+    if Mirror:
+        if "/" in event.raw_text or "a" in event.raw_text or "i" in event.raw_text:
+            await client.send_message('chtwrsbot',event.message) 
 
 @client.on(events.NewMessage(chats=-1001657461170)) #alianza ordenes
 async def new_alianza_handle(event):
