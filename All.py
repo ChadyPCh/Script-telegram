@@ -39,6 +39,9 @@ def Chino():
   
 def Javico():
   os.system("python3 Javico.py")
+  
+def Patronus():
+  os.system("python3 Patronus.py")
 
 t1= threading.Thread(target=Dayi)
 t2= threading.Thread(target=Alcapone)
@@ -53,6 +56,7 @@ t10= threading.Thread(target=Chacon)
 t11= threading.Thread(target=Luis)
 t12= threading.Thread(target=Chino)
 t13= threading.Thread(target=Javico)
+t14= threading.Thread(target=Patronus)
 
 t1.start()
 t2.start()
@@ -67,3 +71,4 @@ t10.start()
 t11.start()
 t12.start()
 t13.start()
+t14.start()
