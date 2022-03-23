@@ -46,6 +46,9 @@ async def new_quest_handle(event):
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
+    if "has ordered" in event.raw_text:
+        await client.forward_messages(-1001436878672,event.message)
+
     if a==1:
         if "Who knows what is lurking in mud." in event.raw_text:
             if Forest:
