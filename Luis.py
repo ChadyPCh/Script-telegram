@@ -153,7 +153,9 @@ async def new_quest_handle(event):
         if "In the forest you came across a tavern where all kinds of magical creatures played a card game. It was called something like Fireplacerock. You stole their golden cards but they turned into dust." in event.raw_text:
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
-
+        if "As I walk through the valley of the shadow of death," in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
  #arenas
     if a==2:
         if "stands victorious over" in event.raw_text or "You didn’t find an opponent. Return later" in event.raw_text:
