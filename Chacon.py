@@ -159,7 +159,7 @@ async def new_quest_handle(event):
         if "Statistically speaking, you come back empty handed from every third adventure in the forest. Seems like you drew your lucky ticket. You came back from the forest. And guess what? Nothing interesting happened." in event.raw_text:
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
-       if "In the forest you came across a tavern where all kinds of magical creatures played a card game. It was called something like Fireplacerock. You stole their golden cards but they turned into dust." in event.raw_text:
+        if "In the forest you came across a tavern where all kinds of magical creatures played a card game. It was called something like Fireplacerock. You stole their golden cards but they turned into dust." in event.raw_text:
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
         if "As I walk through the valley of the shadow of death," in event.raw_text:
