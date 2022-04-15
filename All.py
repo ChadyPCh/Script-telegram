@@ -45,6 +45,9 @@ def Patronus():
   
 def Solrak():
   os.system("python3 Solrak.py")
+  
+def TNTbot():
+  os.system("python3 TNTbot.py")
 
 t1= threading.Thread(target=Dayi)
 t2= threading.Thread(target=Alcapone)
@@ -61,6 +64,7 @@ t12= threading.Thread(target=Chino)
 t13= threading.Thread(target=Javico)
 t14= threading.Thread(target=Patronus)
 t15= threading.Thread(target=Solrak)
+t16= threading.Thread(target=TNTbot)
 
 t1.start()
 t2.start()
@@ -77,3 +81,4 @@ t12.start()
 t13.start()
 t14.start()
 t15.start()
+t16.start()
