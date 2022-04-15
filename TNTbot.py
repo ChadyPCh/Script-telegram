@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-
+pip install python-telegram-bot
 from telegram.ext import Updater , CommandHandler
 import telegram
 
