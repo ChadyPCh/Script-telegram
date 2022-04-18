@@ -119,7 +119,7 @@ async def new_quest_handle(event):
     if "Not enough stamina. " in event.raw_text:
         a=0
         time.sleep(3)
-        await client.send_message('chtwrsbot','/g_def')
+        await client.send_message('chtwrsbot','/myshop_open')
 
     if "Battle is coming" in event.raw_text:
         a=0
