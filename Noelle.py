@@ -29,7 +29,7 @@ client = TelegramClient('Pinky_pay', api_id, api_hash,sequential_updates=True)
 
 @client.on(events.NewMessage(chats=408101137,incoming=True)) #CW bot
 async def new_quest_handle(event):
-    global HP,LVL,STAMINA,rangeMobs, Forest , Swamp , Valley , RandomQuest , a
+    global HP,LVL,STAMINA,rangeMobs, Forest , Swamp , Valley , RandomQuest ,Foray , a
     
     if "You were strolling around on your horse when you noticed" in event.raw_text:
         time.sleep(randint(10,60))
@@ -37,8 +37,8 @@ async def new_quest_handle(event):
 
 
     if "Stamina restored." in event.raw_text:
-        RandomQuest = True
-        Forest = Swamp = Valley = False
+        Foray= True
+        Forest = Swamp = Valley = RandomQuest = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
@@ -150,7 +150,7 @@ async def new_quest_handle(event):
            
 @client.on(events.NewMessage(chats= -492486194)) #Chat de control
 async def new_group_handle(event):
-    global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , a
+    global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , a , Foray
 
     if "Nto" in event.raw_text:
         Forest = Swamp = Valley = RandomQuest = False
@@ -158,24 +158,30 @@ async def new_group_handle(event):
     
     if "Nq" in event.raw_text:
         RandomQuest = True
-        Forest = Swamp = Valley = False
+        Forest = Swamp = Valley = Foray=False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
-    if "Nfor" in event.raw_text:
+    if "Nforest" in event.raw_text:
         Forest = True
-        Swamp = Valley = RandomQuest = False
+        Swamp = Valley = RandomQuest = Foray = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
     if "Ns" in event.raw_text:
         Swamp = True
-        Forest = Valley = RandomQuest = False
+        Forest = Valley = RandomQuest = Foray = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
-
+        
+    if "Nforay" in event.raw_text:
+        Foray= True
+        Forest = Valley = RandomQuest = Swamp = False
+        await client.send_message('chtwrsbot','🗺Quests')
+        a=1
+        
     if "Nv" in event.raw_text:
-        Forest = Swamp = RandomQuest = False
+        Forest = Swamp = RandomQuest = Foray = False
         Valley = True
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
