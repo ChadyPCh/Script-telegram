@@ -56,6 +56,11 @@ async def new_quest_handle(event):
                 time.sleep(3)
                 await event.click(0,2)
 
+            if Foray:
+                time.sleep(3)
+                await event.click(1,0)
+                    
+
             if RandomQuest:
                 time.sleep(3)
                 await event.click(0,randint(0,2))
