@@ -212,48 +212,35 @@ async def new_alianza_handle(event):
           
 @client.on(events.NewMessage(chats= -1001657461170)) #Chat de control
 async def new_group_handle(event):
-    global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , a
-
-    if "You met some hostile creatures" in event.raw_text and MOBS:
-        await client.forward_messages('chtwrsbot',event.message)
-
-    if "LGA" in event.raw_text:
-        orden = str(event.raw_text[4:len(event.raw_text)])
-        a=0
-        MOBS = False
-        await client.send_message('chtwrsbot', orden)
-
+    global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , 
 
     if "Lto" in event.raw_text:
         Forest = Swamp = Valley = RandomQuest = False
         a=0
     
-    if "Lq" in event.raw_text:
+    if "Lps " in event.raw_text:
         RandomQuest = True
         Forest = Swamp = Valley = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
-    if "Lfor" in event.raw_text:
+    if "Lforest" in event.raw_text:
         Forest = True
         Swamp = Valley = RandomQuest = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
-    if "Ls" in event.raw_text:
+    if "Lswamp" in event.raw_text:
         Swamp = True
         Forest = Valley = RandomQuest = False
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
-    if "Lv" in event.raw_text:
+    if "Lvalley" in event.raw_text:
         Forest = Swamp = RandomQuest = False
         Valley = True
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
-
-    if "Hp" in event.raw_text:
-        await client.send_message('chtwrsbot','🏅Me')
 
     if "LOn" in event.raw_text:
         MOBS = True
