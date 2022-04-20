@@ -212,7 +212,7 @@ async def new_alianza_handle(event):
           
 @client.on(events.NewMessage(chats= -1001657461170)) #Chat de control
 async def new_group_handle(event):
-    global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , 
+    global HP , LVL , MOBS , Forest , Swamp , Valley  , RandomQuest , a
 
     if "Lto" in event.raw_text:
         Forest = Swamp = Valley = RandomQuest = False
