@@ -218,7 +218,7 @@ async def new_group_handle(event):
         Forest = Swamp = Valley = RandomQuest = False
         a=0
     
-    if "Lps " in event.raw_text:
+    if "Lps" in event.raw_text:
         RandomQuest = True
         Forest = Swamp = Valley = False
         await client.send_message('chtwrsbot','🗺Quests')
