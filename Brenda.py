@@ -39,9 +39,11 @@ async def new_quest_handle(event):
         await event.click(0)     
 
     if gw==1:
-        if "Withdrawing" in event.raw_text:
+        if "Withdrawing" in event.raw_text or "Not enough items on guild stock" in event.raw_text or "You are too busy with a different adventure. Try a bit later." in event.raw_text:
             await client.forward_messages(-1001362175569,event.message) 
             gw=0 
+        else:
+            gw=0
 
     if "To accept their offer, you shall" in event.raw_text:
         time.sleep(randint(1,5))
