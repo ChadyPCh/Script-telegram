@@ -29,15 +29,15 @@ client = TelegramClient('SrDuwarswolf', api_id, api_hash,sequential_updates=True
 
 @client.on(events.NewMessage(chats=408101137,incoming=True)) #CW bot
 async def new_quest_handle(event):
-    global HP,LVL,STAMINA,rangeMobs, Forest , Swamp , Valley , RandomQuest , a
+    global HP,LVL,STAMINA,rangeMobs, Forest , Swamp , Valley , RandomQuest , a , Foray
     
     if "You were strolling around on your horse when you noticed" in event.raw_text:
         time.sleep(randint(10,60))
         await event.click(0)     
 
     if "Stamina restored." in event.raw_text:
-        RandomQuest = True
-        Forest = Swamp = Valley = False
+        Foray = True
+        Forest = Swamp = Valley = RandomQuest = False 
         await client.send_message('chtwrsbot','🗺Quests')
         a=1
 
@@ -62,7 +62,15 @@ async def new_quest_handle(event):
                 time.sleep(3)
                 await event.click(0,randint(0,2))
 
+            if Foray:
+                time.sleep(3)
+                await event.click(1,0)
+                
         if "You received:" in event.raw_text and "stands victorious over" not in event.raw_text:
+            time.sleep(randint(5,10))
+            await client.send_message('chtwrsbot','🗺Quests')
+ 
+        if "was completely clueless" in event.raw_text or "tried stopping you,"  in event.raw_text or "noticed you and nearly"  in event.raw_text:
             time.sleep(randint(5,10))
             await client.send_message('chtwrsbot','🗺Quests')
 
