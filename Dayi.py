@@ -41,7 +41,7 @@ async def new_quest_handle(event):
         await event.click(0) 
     
     if Mirror:
-        if "a" in event.raw_text or "i" in event.raw_text:
+        if "a" in event.raw_text or "i" in event.raw_text or "/" in event.raw_text:
             await client.forward_messages(-1001728328287,event.message)  
 
     if "To accept their offer, you shall" in event.raw_text:
@@ -141,13 +141,13 @@ async def new_quest_handle(event):
     if "Not enough stamina. " in event.raw_text:
         a=0
         time.sleep(3)
-        await client.send_message('chtwrsbot','/ga_def')
+        await client.send_message('chtwrsbot','🛡Defend')
         MOBS = False
 
     if "Battle is coming" in event.raw_text:
         a=0
         time.sleep(3)
-        await client.send_message('chtwrsbot','/ga_def')
+        await client.send_message('chtwrsbot','🛡Defend')
         MOBS = False
 
     if "You met some hostile creatures" in event.raw_text:
